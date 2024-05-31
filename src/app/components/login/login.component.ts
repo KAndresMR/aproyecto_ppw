@@ -3,6 +3,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../services/auth.service';
+import { Console } from 'console';
 
 @Component({
   selector: 'app-login',
@@ -34,8 +35,8 @@ export class LoginComponent {
     this.authService.login(email, password).subscribe({
       next: () => {
         // Verificamos si el usuario es administrador
-        /*
         this.authService.getUserData().subscribe((userData) => {
+          
           if (userData && userData.isAdmin) {
             // Si es administrador, redireccionamos al panel de administrador
             this.router.navigateByUrl('/admin-dashboard');
@@ -43,7 +44,7 @@ export class LoginComponent {
             // Si no es administrador, redireccionamos al panel de usuario normal
             this.router.navigateByUrl('/user-dashboard');
           }
-        });*/
+        });
       },
       error: (err) => {
         // Manejamos errores de inicio de sesión

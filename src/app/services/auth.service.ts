@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, user } from '@angular/fire/auth'
-import { getFirestore, doc, setDoc } from 'firebase/firestore';
+import { getFirestore, doc, setDoc, getDoc } from 'firebase/firestore';
 import { signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { Observable, from, of} from 'rxjs';
 import { switchMap } from 'rxjs/operators';
@@ -67,8 +67,15 @@ export class AuthService {
   }
 
 
+  getBooksData() {
     
-/*
+  }
+
+
+
+
+    
+
   getUserData(): Observable<UserInterface | null> {
     return this.user$.pipe(
       switchMap((userAuth) => {
@@ -91,6 +98,6 @@ export class AuthService {
         }
       })
     );
-  }*/
+  }
 
 }
